@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Alumno;
+use App\Entity\Docente;
 
 class HomeController extends AbstractController
 {
@@ -13,13 +15,23 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
+      
+       //Obtengo el repositorio de los Alumnos
+       $alumnos=$this->getDoctrine()->getRepository(Alumno::class)->findAll();
+
+       //Obtengo el repositorio de los Docentes
+       $docentes=$this->getDoctrine()->getRepository(Docente::class)->findAll();
+
         return $this->render('home/index.html.twig', 
         	[
              'controller_name' => 'HomeController',
              'titulo' => "Prueba de Symfony de Carlos",
              'variable' => 0,
+             'alumnos' => $alumnos,
+             'docentes' => $docentes,
             ]);
     }
+
     
     /**
      * @Route("/home/vista1", name="vista1")

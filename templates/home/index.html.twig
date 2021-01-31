@@ -13,20 +13,37 @@
     el título debe imprimirse en mayúscula usando algún filtro de twig. 
     -->
     <div id="ejercicio1">
+     <h2>Ejercicio 1</h2>
         {% for i in 0..20 %}
          {{ i}} - {{ titulo }}<br>
         {% endfor %}
     </div>
+    <br>
 
     <!-- Enunciado del Entregable
     b.	Imprimir un contenedor div si una variable dada (puede ser llamada como ustedes quieren) es igual a un valor dado
     -->
-    <div id="ejercicio2">     
+    <div id="ejercicio2">  
+     <h2>Ejercicio 2</h2>   
         {% if variable == 0 %}
          <p>La variable que pase, es igual al valor dado 0</p>
         {% endif %}
     </div>
+    <br>
 
+    <div id="ejercicio3">
+       <h2>Ejercicio 3</h2>
+       <h3>Listado del Repositorio Alumnos</h3>
+       {% for alumnos in alumnos %}
+        <p>ID:{{ alumnos.id }} - Apellido:{{ alumnos.apellido }} - Nombre: {{ alumnos.nombre }} - Legajo: {{ alumnos.legajo }}</p>
+       {% endfor %}
+      
+       <h3>Listado del Repositorio Docentes</h3>
+       {% for docentes in docentes %}
+        <p>ID:{{ docentes.id }} - Apellido:{{ docentes.apellido }} - Legajo: {{ docentes.legajo }}</p>
+       {% endfor %}
+    </div>
+    <br>
 
 
 </div>
