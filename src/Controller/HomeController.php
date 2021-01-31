@@ -15,12 +15,14 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-      
+       //Obtengo el Entity Manager
+       $em = $this ->getDoctrine()->getManager();
+
        //Obtengo el repositorio de los Alumnos
-       $alumnos=$this->getDoctrine()->getRepository(Alumno::class)->findAll();
+       $alumnos = $em->getRepository(Alumno::class)->findAll();
 
        //Obtengo el repositorio de los Docentes
-       $docentes=$this->getDoctrine()->getRepository(Docente::class)->findAll();
+       $docentes = $em-> getRepository(Docente::class)->findAll();
 
         return $this->render('home/index.html.twig', 
         	[
