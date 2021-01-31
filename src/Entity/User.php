@@ -70,7 +70,11 @@ class User implements UserInterface
     {
     }
 
-  
+    public function supportsClass($class)
+    {
+     return $class === MyCustomModel::class;
+    }
+
 
     /** @see \Serializable::serialize() */
     public function serialize()
