@@ -21,7 +21,7 @@ class AlumnoController extends AbstractController
     public function index(): Response
     {
      //Obtengo el Entity Manager
-     $em = $this ->getDoctrine()->getManager();
+     $em=$this->getDoctrine()->getManager();
 
      //Obtengo el repositorio de los Alumnos
      $alumnos=$em->getRepository(Alumno::class)->findAll();
@@ -30,7 +30,7 @@ class AlumnoController extends AbstractController
     }
 
     /**
-    * @Route("/alumnos/ver/{id}", name="veralumno")
+    * @Route("/alumnos/ver/{id}", name="ver")
     */
     public function verAlumno($id): Response
     {
