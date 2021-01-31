@@ -34,8 +34,6 @@ class Alumno
     private $legajo;
 
 
-    
-
 
     public function getId(): ?int
     {
@@ -59,7 +57,7 @@ class Alumno
         return $this->apellido;
     }
 
-    public function setApellido(string $nombre): self
+    public function setApellido(string $apellido): self
     {
         $this->apellido = $apellido;
 
@@ -71,7 +69,7 @@ class Alumno
         return $this->legajo;
     }
 
-    public function setLegajo(string $nombre): self
+    public function setLegajo(string $legajo): self
     {
         $this->legajo = $legajo;
 

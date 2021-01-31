@@ -38,7 +38,7 @@ class Docente
         return $this->apellido;
     }
 
-    public function setApellido(string $nombre): self
+    public function setApellido(string $apellido): self
     {
         $this->apellido = $apellido;
         return $this;
@@ -49,7 +49,7 @@ class Docente
         return $this->legajo;
     }
 
-    public function setLegajo(string $nombre): self
+    public function setLegajo(string $legajo): self
     {
         $this->legajo = $legajo;
         return $this;

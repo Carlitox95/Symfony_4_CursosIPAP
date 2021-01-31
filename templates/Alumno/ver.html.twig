@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+<div id="listadoAlumnos"> 
+ <h3>Datos Alumno</h3>
+ 
+ <p>ID:{{ alumno.id }}</p>
+ <p>Apellido:{{ alumno.apellido }}</p>
+ <p>Nombre:{{ alumno.nombre }}</p>
+ <p>Legajo:{{ alumno.legajo }}</p>
+</div>
+
+<br>
+
+{% endblock %}

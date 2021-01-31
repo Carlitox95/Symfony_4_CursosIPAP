@@ -22,6 +22,18 @@ class AlumnoRepository extends ServiceEntityRepository
     // /**
     //  * @return Alumno[] Returns an array of Alumno objects
     //  */
+
+    public function findAlumnosByNombre($nombre) {
+     $query= $this->getEntityManager()->createQueryBuilder()
+         ->select('a')
+         ->from('App:Alumno','a')
+         ->where('a.nombre - :nombre')
+         ->setParameter('nombre',$nombre);
+     return $query->getQuery()->getResult();
+    }
+    
+
+
     /*
     public function findByExampleField($value)
     {

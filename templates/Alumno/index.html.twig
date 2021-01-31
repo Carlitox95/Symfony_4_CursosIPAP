@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+<h2>Controlador de Alumnos</h2> 
+<div id="opciones">
+ <a href="alumnos/nuevo"><button type="button">Nuevo Alumno</button> </a>
+</div>
+
+
+<div id="listadoAlumnos"> 
+  
+  <h3>Listado del Repositorio Alumnos</h3> 
+  
+    <table style="width:100%">
+        <thead style="background-color:#01579b;color:white;">
+         <tr><th>Apellido</th><th>Nombre</th><th>Legajo</th><th>Opciones</th></tr>
+        </thead>
+    <tbody style="background-color:#80d8ff;color:white;">
+    {% for alumnos in alumnos %}
+     <!-- Datos del Alumno -->
+        <tr>
+         <th>{{ alumnos.apellido }}</th>
+         <th>{{ alumnos.nombre }}</th>
+         <th>{{ alumnos.legajo }}</th>
+            <th> 
+         	 <a href="alumnos/ver/{{alumnos.id}}">Ver</a>
+             <a href="alumnos/editar/{{alumnos.id}}">Editar</a>
+             <a href="alumnos/borrar/{{alumnos.id}}">Borrar</a>
+            </th>
+        </tr>     
+     <!-- Datos del Alumno -->
+    {% endfor %}
+</tbody>
+  </table>
+
+</div>
+
+{% endblock %}

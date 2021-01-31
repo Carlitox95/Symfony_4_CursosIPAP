@@ -19,11 +19,12 @@ class HomeController extends AbstractController
        $em = $this ->getDoctrine()->getManager();
 
        //Obtengo el repositorio de los Alumnos
-       $alumnos = $em->getRepository(Alumno::class)->findAll();
+       $alumnos=$em->getRepository(Alumno::class)->findAll();
 
        //Obtengo el repositorio de los Docentes
-       $docentes = $em-> getRepository(Docente::class)->findAll();
+       $docentes=$em-> getRepository(Docente::class)->findAll();
 
+       
         return $this->render('home/index.html.twig', 
         	[
              'controller_name' => 'HomeController',
